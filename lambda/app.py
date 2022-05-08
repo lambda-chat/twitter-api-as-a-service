@@ -108,7 +108,7 @@ class TwitterClient:
             os.environ["AccessTokenSecret"],
         )
 
-    def get_user_info(self, screen_name: str) -> dict[str, Any]:
+    def get_user_info(self, screen_name: str) -> UserInfo:
         endpoint = self.base_url + "users/show.json"
         params = {"screen_name": screen_name}
         res = self.session.get(endpoint, params=params)
